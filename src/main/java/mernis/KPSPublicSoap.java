@@ -20,7 +20,7 @@ import java.util.List;
 
 public class KPSPublicSoap
 {
-    interface ALMIWcfMethod
+    interface LMMIWcfMethod
     {
         ExtendedSoapSerializationEnvelope CreateSoapEnvelope() throws java.lang.Exception;
 
@@ -139,7 +139,7 @@ public class KPSPublicSoap
     public Boolean TCKimlikNoDogrula(final Long TCKimlikNo,final String Ad,final String Soyad,final Integer DogumYili) throws java.lang.Exception
     {
         com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile __profile = new com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile();
-        return (Boolean)execute(new ALMIWcfMethod()
+        return (Boolean)execute(new LMMIWcfMethod()
         {
             @Override
             public ExtendedSoapSerializationEnvelope CreateSoapEnvelope(){
@@ -192,7 +192,7 @@ public class KPSPublicSoap
         },"http://tckimlik.nvi.gov.tr/WS/TCKimlikNoDogrula",__profile);
     }
 
-    protected java.lang.Object execute(ALMIWcfMethod wcfMethod,String methodName,com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile profile) throws java.lang.Exception
+    protected java.lang.Object execute(LMMIWcfMethod wcfMethod,String methodName,com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile profile) throws java.lang.Exception
     {
         org.ksoap2.transport.Transport __httpTransport=createTransport();
         __httpTransport.debug=enableLogging;

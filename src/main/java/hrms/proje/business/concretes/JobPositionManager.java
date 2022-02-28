@@ -24,7 +24,7 @@ public class JobPositionManager implements JobPositionService {
     }
 
     public Result jobPositionControl(String positionName){
-        if(this.jobPositionDao.findByPositionName(positionName) != null){
+        if(this.jobPositionDao.findByJobPositionName(positionName) != null){
             return new ErrorResult();
         }
         return new SuccessResult();
@@ -33,12 +33,12 @@ public class JobPositionManager implements JobPositionService {
     @Override
     public Result add(JobPosition jobPosition) {
 
-        if(!jobPositionControl(jobPosition.getPositionName()).isSuccess()){
+        if(!jobPositionControl(jobPosition.getJobPositionName()).isSuccess()){
             return new ErrorResult("İş pozisyonu sistemde kayıtlı.");
         }
 
         this.jobPositionDao.save(jobPosition);
-        return new SuccessResult("İş pozisyonu eklendi: " + jobPosition.getPositionName());
+        return new SuccessResult("İş pozisyonu eklendi: " + jobPosition.getJobPositionName());
     }
 
 }

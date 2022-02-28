@@ -18,13 +18,11 @@ public class ProjeApplication extends SpringBootServletInitializer {
 		SpringApplication.run(ProjeApplication.class, args);
 	}
 
-	@Bean//Bean; normal bir class'tan herhangi bir farkı yoktur. Derleme yapıldığında Spring Boot, Bean'i gördüğü zaman belleğe yerleştirir
-	//Docket isimli bir nesne ile controller'larımızdaki bütün RequestHandler'ları bulur ve bizim için dökümantasyon haline getirir.
-	//Uygulamamız içerisindeki bütün API'leri bulur ve o API'leri tarayıp test edebileceğimiz bir noktaya taşır.
+	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("hrms.proje"))//kodlamaio.northwind'leri gez, API'leri bul ve dökümantasyona ekle
+				.apis(RequestHandlerSelectors.basePackage("hrms.proje"))
 				.build();
 	}
 
