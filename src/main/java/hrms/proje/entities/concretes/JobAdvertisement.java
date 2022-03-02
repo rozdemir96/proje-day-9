@@ -1,5 +1,6 @@
 package hrms.proje.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,12 @@ public class JobAdvertisement {
     @Column(name = "application_deadline", nullable = false)
     private LocalDate applicationDeadline;
 
+    @Column(name = "job_posting_date")
+    private LocalDate jobPostingDate;
+
+    @Column(name = "enabled", nullable = false)
+    private boolean enabled;
+
     @ManyToOne()
     @JoinColumn(name = "city_id")
     private City city;
@@ -40,4 +47,9 @@ public class JobAdvertisement {
     @ManyToOne
     @JoinColumn(name = "job_position_id")
     private JobPosition jobPosition;
+
+    @ManyToOne
+    @JoinColumn(name = "employer_id")
+    private Employer employer;
+
 }

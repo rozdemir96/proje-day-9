@@ -1,5 +1,7 @@
 package hrms.proje.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "cities")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "job_advertisements"})
 public class City {
 
     @Id
@@ -21,6 +24,7 @@ public class City {
     @Column(name = "city_name", length = 50, nullable = false)
     private String cityName;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "city")
     private List<JobAdvertisement> jobAdvertisements;
 }

@@ -4,7 +4,7 @@
     <Version>5.12.12.0</Version>
     <AccountType>Basic</AccountType>
     <LibrariesFolder>easywsdl</LibrariesFolder>
-    <MainClass>LMMKPSPublicSoap</MainClass>
+    <MainClass>IDUKPSPublicSoap</MainClass>
   </Info>
   <Settings>
     <Url>https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL</Url>
@@ -29,14 +29,20 @@
     <DetectDictionaries>false</DetectDictionaries>
   </Settings>
   <Files>
-    <File>LMMDateTimeConverter.java</File>
-    <File>LMMExtendedSoapSerializationEnvelope.java</File>
-    <File>LMMHelper.java</File>
-    <File>LMMKPSPublicSoap.java</File>
-    <File>LMMKPSPublicSoap12.java</File>
-    <File>LMMMarshalGuid.java</File>
-    <File>LMMStandardDateTimeConverter.java</File>
-    <File>Metadata.info</File>
+    <File>DateTimeConverter.java</File>
+    <File>ExtendedSoapSerializationEnvelope.java</File>
+    <File>Helper.java</File>
+    <File>IDUDateTimeConverter.java</File>
+    <File>IDUExtendedSoapSerializationEnvelope.java</File>
+    <File>IDUHelper.java</File>
+    <File>IDUKPSPublicSoap.java</File>
+    <File>IDUKPSPublicSoap12.java</File>
+    <File>IDUMarshalGuid.java</File>
+    <File>IDUStandardDateTimeConverter.java</File>
+    <File>KPSPublicSoap.java</File>
+    <File>KPSPublicSoap12.java</File>
+    <File>MarshalGuid.java</File>
+    <File>StandardDateTimeConverter.java</File>
   </Files>
   <Libraries>
     <File>ExKsoap2-1.0.3.1.jar</File>
